@@ -1,0 +1,68 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Login | Instaclone
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='shortcut icon', href='images/favicon.ico', type='image/x-icon')
+    link(href='css/style.css', rel='stylesheet')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  body.no-padding
+    main.login
+      .login__column
+        img.login__phone-image(src='images/phone.png', alt='Phone Image', title='Phone Image')
+      section.login__column
+        .login__section.login__sign-in
+          img.login__logo(src='images/logo.png', alt='Logo', title='Logo')
+          // x
+          form.login__form(method='post', action='/login')
+            .login__input-container
+              input.login__input(type='text', name='username', placeholder='Username', required='')
+            .login__input-container
+              input.login__input(type='password', name='password', placeholder='Password', required='')
+              a.login__form-link(href='#') Forgot?
+            .login__input-container
+              input.login__input.login__input--btn(type='submit', value='Log in')
+          span.login__divider or
+          a.login__fb-link(href='#')
+            i.fa.fa-facebook-square.fa-lg(aria-hidden='true')
+            |  Log in with Facebook
+        .login__section.login__sign-up
+          span.login__text
+            | Don't have an account? 
+            a.login__link(href='/signup')
+              | Sign up
+        .login__section.login__section--transparent.login__app
+          span.login__text
+            | Get the app.
+          .login__appstores
+            img.login__appstore(src='images/ios.png', alt='iOS', title='Get the app!')
+            img.login__appstore(src='images/android.png', alt='Android', title='Get the app!')
+    footer.footer
+      nav.footer__nav
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='#') about us
+          li.footer__list-item
+            a.footer__link(href='#') support
+          li.footer__list-item
+            a.footer__link(href='#') blog
+          li.footer__list-item
+            a.footer__link(href='#') press
+          li.footer__list-item
+            a.footer__link(href='#') api
+          li.footer__list-item
+            a.footer__link(href='#') jobs
+          li.footer__list-item
+            a.footer__link(href='#') privacy
+          li.footer__list-item
+            a.footer__link(href='#') terms
+          li.footer__list-item
+            a.footer__link(href='#') directory
+          li.footer__list-item
+            a.footer__link(href='#') language
+      span.footer__copyright © 2020 instagram
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='js/app.js')

@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title Register Page
+    link(rel='stylesheet', href='css/signup.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script.
+      $(document).ready(function(){
+      var email,pass,username,name;
+      $("#submit").click(function(){
+      name=$('#name').val();
+      email=$("#email").val();
+      username = $('#username').val();
+      pass=$("#password").val();
+      /*
+      * Perform some validation here.
+      */
+      $.post("/signup_done",{name:name, email:email, username:username, pass:pass},function(data){
+        console.log('data was sent successfully')
+      })
+      window.location.href="/";
+      });
+      });
+      
+  body
+    .hero
+      .form-box
+        h1.instagram INSTAGRAM
+        form
+          input.input-field(type='text', placeholder='Full Name', id='name', required='')
+          input.input-field(type='text', placeholder='Username', id='username', required='')
+          input.input-field(type='email', placeholder='Email ID', id='email' ,required='')
+          input.input-field(type='password' placeholder='Password', id='password', required='')
+          
+          input.check-box(type='checkbox')
+          span.agree I agree to the terms & conditions
+          button.submit-btn(type='submit' id='submit') Sign Up
+       

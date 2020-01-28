@@ -1,0 +1,101 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Feed | Instaclone
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='shortcut icon', href='images/favicon.ico', type='image/x-icon')
+    link(href='css/style.css', rel='stylesheet')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  body
+    nav.navigation
+      a(href='/feed')
+        img.navigation__logo(src='images/navLogo.png', alt='logo', title='logo')
+      .navigation__search-container
+        i.fa.fa-search
+        input(type='text', placeholder='Search')
+      .navigation__icons
+        a.navigation__link(href='/explore')
+          i.fa.fa-compass
+        a.navigation__link(href='#')
+          i.fa.fa-heart-o
+        a.navigation__link(href='/profile')
+          i.fa.fa-user-o
+    main.feed
+    each user in data
+      section.photo
+        header.photo__header
+          .photo__header-column
+            img.photo__avatar(src='images/avatar.jpg')
+          .photo__header-column
+            span.photo__username #{user.username}
+            span.photo__location Islamabad
+        .photo__file-container
+          img.photo__file(src= user.img_path)
+        .photo__info
+          .photo__icons
+            span.photo__icon
+              i.fa.fa-heart-o.heart.fa-lg
+            span.photo__icon
+              i.fa.fa-comment-o.fa-lg
+          span.photo__likes 23
+          ul.photo__comments
+          span.photo__time-ago 
+          .photo__add-comment-container
+            textarea.photo__add-comment(placeholder='Add a comment...')
+            i.fa.fa-ellipsis-h
+      
+      
+      //- section.photo(style="height:40%; width:70%")
+      //-   header.photo__header
+      //-     .photo__header-column
+      //-       img.photo__avatar(src='images/avatar.jpg')
+      //-     .photo__header-column
+      //-       span.photo__username serranoarevalo
+      //-       span.photo__location European Art of Living Center - Bad Antogast
+      //-   .photo__file-container
+      //-     img.photo__file(src='images/feedPhoto.jpg')
+      //-   .photo__info
+      //-     .photo__icons
+      //-       span.photo__icon
+      //-         i.fa.fa-heart-o.heart.fa-lg
+      //-       span.photo__icon
+      //-         i.fa.fa-comment-o.fa-lg
+      //-     span.photo__likes 35 likes
+      //-     ul.photo__comments
+      //-       li.photo__comment
+      //-         span.photo__comment-author serranoarevalo
+      //-         | wow this is great!
+      //-       li.photo__comment
+      //-         span.photo__comment-author lynn
+      //-         | no is not!
+      //-     span.photo__time-ago 11 hours ago
+      //-     .photo__add-comment-container
+      //-       textarea.photo__add-comment(placeholder='Add a comment...')
+      //-       i.fa.fa-ellipsis-h
+    footer.footer
+      nav.footer__nav
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='#') about us
+          li.footer__list-item
+            a.footer__link(href='#') support
+          li.footer__list-item
+            a.footer__link(href='#') blog
+          li.footer__list-item
+            a.footer__link(href='#') press
+          li.footer__list-item
+            a.footer__link(href='#') api
+          li.footer__list-item
+            a.footer__link(href='#') jobs
+          li.footer__list-item
+            a.footer__link(href='#') privacy
+          li.footer__list-item
+            a.footer__link(href='#') terms
+          li.footer__list-item
+            a.footer__link(href='#') directory
+          li.footer__list-item
+            a.footer__link(href='#') language
+      span.footer__copyright © 2020 instagram
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='js/app.js')

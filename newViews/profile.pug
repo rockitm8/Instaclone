@@ -1,0 +1,142 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Profile | Instaclone
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='shortcut icon', href='images/favicon.ico', type='image/x-icon')
+    link(href='css/style.css', rel='stylesheet')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  body
+    nav.navigation
+      a(href='/feed')
+        img.navigation__logo(src='images/navLogo.png', alt='logo', title='logo')
+      .navigation__search-container
+        i.fa.fa-search
+        input(type='text', placeholder='Search')
+      .navigation__icons
+        a.navigation__link(href='/explore')
+          i.fa.fa-compass
+        a.navigation__link(href='#')
+          i.fa.fa-heart-o
+        a.navigation__link(href='/profile')
+          i.fa.fa-user-o
+    main.profile-container
+      section.profile
+        header.profile__header
+          .profile__avatar-container
+          if data.paths.length>0
+            img.profile__avatar(src= data.paths[data.paths.length-1].img_path)
+          else
+            img.profile__avatar(src= "images/avatar.jpg")
+          .profile__info
+            .profile__name
+              h1.profile__title #{data.username}
+              a.profile__button.u-fat-text(href='/edit-profile') Edit profile
+              i#cog.fa.fa-cog.fa-2x
+            ul.profile__numbers
+              li.profile__posts
+                span.profile__number.u-fat-text #{data.paths.length}
+                |  posts
+              li.profile__followers
+                span.profile__number.u-fat-text #{data.followers}
+                |  followers
+              li.profile__following
+                span.profile__number.u-fat-text #{data.followings}
+                |  following
+            .profile__bio
+              span.profile__full-name.u-fat-text #{data.username}
+                br
+                br
+              p.profile__full-bio
+                | Devil
+                br
+                br  
+              a.profile__link.u-fat-text(href='http://www.google.com') www.devil.com
+        each path in data.paths
+          .profile__pictures
+            a.profile-picture()
+              img.profile-picture__picture(src=path.img_path alt=path.img_path type="text/plain")
+              .profile-picture__overlay
+                span.profile-picture__number
+                  i.fa.fa-heart
+                  |   10
+                span.profile-picture__number
+                  i.fa.fa-comment
+                  |  5
+        br
+        br
+        form(action='/uploadfile', enctype='multipart/form-data', method='POST')
+          input(type='file', name='myFile', accept='image/*')
+          input(type='submit', value='Upload a photo')
+
+              
+              
+          //- a.profile-picture(href='/image-detail')
+          //-   img.profile-picture__picture(src='images/feedPhoto.jpg')
+          //-   .profile-picture__overlay
+          //-     span.profile-picture__number
+          //-       i.fa.fa-heart
+          //-       |  450
+          //-     span.profile-picture__number
+          //-       i.fa.fa-comment
+          //-       |  39
+          //- a.profile-picture(href='/image-detail')
+          //-   img.profile-picture__picture(src='images/feedPhoto.jpg')
+          //-   .profile-picture__overlay
+          //-     span.profile-picture__number
+          //-       i.fa.fa-heart
+          //-       |  450
+          //-     span.profile-picture__number
+          //-       i.fa.fa-comment
+          //-       |  39
+          //- a.profile-picture(href='/image-detail')
+          //-   img.profile-picture__picture(src='images/feedPhoto.jpg')
+          //-   .profile-picture__overlay
+          //-     span.profile-picture__number
+          //-       i.fa.fa-heart
+          //-       |  450
+          //-     span.profile-picture__number
+          //-       i.fa.fa-comment
+          //-       |  39
+          //- a.profile-picture(href='/image-detail')
+          //-   img.profile-picture__picture(src='images/feedPhoto.jpg')
+          //-   .profile-picture__overlay
+          //-     span.profile-picture__number
+          //-       i.fa.fa-heart
+          //-       |  450
+          //-     span.profile-picture__number
+          //-       i.fa.fa-comment
+          //-       |  39
+    footer.footer
+      nav.footer__nav
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='#') about us
+          li.footer__list-item
+            a.footer__link(href='#') support
+          li.footer__list-item
+            a.footer__link(href='#') blog
+          li.footer__list-item
+            a.footer__link(href='#') press
+          li.footer__list-item
+            a.footer__link(href='#') api
+          li.footer__list-item
+            a.footer__link(href='#') jobs
+          li.footer__list-item
+            a.footer__link(href='#') privacy
+          li.footer__list-item
+            a.footer__link(href='#') terms
+          li.footer__list-item
+            a.footer__link(href='#') directory
+          li.footer__list-item
+            a.footer__link(href='#') language
+      span.footer__copyright © 2020 instagram
+    .popUp
+      i#closePopUp.fa.fa-times.fa-2x
+      .popUp__container
+        .popUp__buttons
+          a.popUp__button(href='/logout') Log Out
+          a#cancelPopUp.popUp__button(href='#') Cancel
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='js/app.js')

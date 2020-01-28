@@ -1,0 +1,91 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Explore | Instaclone
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='shortcut icon', href='images/favicon.ico', type='image/x-icon')
+    link(href='css/style.css', rel='stylesheet')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  body
+    nav.navigation
+      a(href='/feed')
+        img.navigation__logo(src='images/navLogo.png', alt='logo', title='logo')
+      .navigation__search-container
+        i.fa.fa-search
+        input(type='text', placeholder='Search')
+      .navigation__icons
+        a.navigation__link(href='/explore')
+          i.fa.fa-compass
+        a.navigation__link()
+          i.fa.fa-heart-o
+        a.navigation__link(href='/profile')
+          i.fa.fa-user-o
+    main.explore
+      section.people
+        ul.people__list
+        each user in data
+          li.people__person
+            .people__column
+              .people__avatar-container
+                img.people__avatar(src='images/avatar.jpg')
+              .people__info
+                span.people__username #{user.username}
+                span.people__full-name #{user.name}
+            .people__column
+              a.follow() Follow
+          //- li.people__person
+          //-   .people__column
+          //-     .people__avatar-container
+          //-       img.people__avatar(src='images/avatar.jpg')
+          //-     .people__info
+          //-       span.people__username
+          //-         | davidbeckham
+          //-         img(src='images/verified.png')
+          //-       span.people__full-name David Beckham
+          //-   .people__column
+          //-     a(href='/follow') Follow
+          //- li.people__person
+          //-   .people__column
+          //-     .people__avatar-container
+          //-       img.people__avatar(src='images/avatar.jpg')
+          //-     .people__info
+          //-       span.people__username davidbeckham
+          //-       span.people__full-name David Beckham
+          //-   .people__column
+          //-     a(href='#') Follow
+          //- li.people__person
+          //-   .people__column
+          //-     .people__avatar-container
+          //-       img.people__avatar(src='images/avatar.jpg')
+          //-     .people__info
+          //-       span.people__username davidbeckham
+          //-       span.people__full-name David Beckham
+          //-   .people__column
+          //-     a(href='#') Follow
+    footer.footer
+      nav.footer__nav
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='#') about us
+          li.footer__list-item
+            a.footer__link(href='#') support
+          li.footer__list-item
+            a.footer__link(href='#') blog
+          li.footer__list-item
+            a.footer__link(href='#') press
+          li.footer__list-item
+            a.footer__link(href='#') api
+          li.footer__list-item
+            a.footer__link(href='#') jobs
+          li.footer__list-item
+            a.footer__link(href='#') privacy
+          li.footer__list-item
+            a.footer__link(href='#') terms
+          li.footer__list-item
+            a.footer__link(href='#') directory
+          li.footer__list-item
+            a.footer__link(href='#') language
+      span.footer__copyright © 2020 instagram
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='js/app.js')

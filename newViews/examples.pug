@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Examples
+  body
+    h1 Forms and Inputs
+    form
+      input(type='text')
+      input(type='email')
+      input(type='password')
+      input(type='file', accept='image/*')
+      input(type='color')
+      input(type='date')
+      input(type='range')
+      input(type='radio')
+      input(type='checkbox')
+      input(type='number')
+    h1 Lists
+    ul
+      li One
+      li Two
+      li Three
+    ol
+      li One
+      li Two
+      li Three
+    h1 EMMET Syntax
+    code parent.className#idName>child+sibling
+    xmp
+      | <parent class="className" id="idName">
+      | <child></child>
+      | <sibling></sibling>
+      | </parent>
+    h1 Radio Buttons
+    span What are you?
+    br
+    label(for='female') Female
+    input#female(type='radio', value='female', name='gender', checked='')
+    br
+    label(for='male') Male
+    input#male(type='radio', value='male', name='gender')

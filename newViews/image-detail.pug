@@ -1,0 +1,74 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Image Detail | Instaclone
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='shortcut icon', href='images/favicon.ico', type='image/x-icon')
+    link(href='css/style.css', rel='stylesheet')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  body
+    nav.navigation
+      a(href='feed.html')
+        img.navigation__logo(src='images/navLogo.png', alt='logo', title='logo')
+      .navigation__search-container
+        i.fa.fa-search
+        input(type='text', placeholder='Search')
+      .navigation__icons
+        a.navigation__link(href='/explore')
+          i.fa.fa-compass
+        a.navigation__link(href='#')
+          i.fa.fa-heart-o
+        a.navigation__link(href='/profile')
+          i.fa.fa-user-o
+    main.image-detail
+      section.image
+        .image__file-container
+          img.image__file(src= data.img_path style="height:70% ; width:70%") 
+        .image__info
+          header.image__header
+            .image__avatar-container
+              //- img.image__avatar(src='images/avatar.jpg' style="height:70% ; width:70%")
+            .image__info
+              span.image__author serranoarevalo
+              span.image__location The Fat Policeman, Budapest
+          ul.image__comments
+            li.image__comment
+              span.image__comment-author serranoarevalo
+              |  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          .image__actions
+            span.image__action
+              i.fa.fa-heart-o.fa-lg
+            span.image__action
+              i.fa.fa-comment-o.fa-lg
+          span.image__likes 260 likes
+          span.image__date October 30, 2016
+          .image__add-comment
+            textarea.image__textarea
+            i.fa.fa-ellipsis-h
+    footer.footer
+      nav.footer__nav
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='#') about us
+          li.footer__list-item
+            a.footer__link(href='#') support
+          li.footer__list-item
+            a.footer__link(href='#') blog
+          li.footer__list-item
+            a.footer__link(href='#') press
+          li.footer__list-item
+            a.footer__link(href='#') api
+          li.footer__list-item
+            a.footer__link(href='#') jobs
+          li.footer__list-item
+            a.footer__link(href='#') privacy
+          li.footer__list-item
+            a.footer__link(href='#') terms
+          li.footer__list-item
+            a.footer__link(href='#') directory
+          li.footer__list-item
+            a.footer__link(href='#') language
+      span.footer__copyright © 2017 instagram
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='js/app.js')

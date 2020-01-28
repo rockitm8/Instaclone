@@ -1,0 +1,135 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Edit Profile | Instaclone
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='shortcut icon', href='images/favicon.ico', type='image/x-icon')
+    link(href='css/style.css', rel='stylesheet')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  body
+    nav.navigation
+      a(href='feed.html')
+        img.navigation__logo(src='images/navLogo.png', alt='logo', title='logo')
+      .navigation__search-container
+        i.fa.fa-search
+        input(type='text', placeholder='Search')
+      .navigation__icons
+        a.navigation__link(href='explore.html')
+          i.fa.fa-compass
+        meta(charset='UTF-8')
+        title Box Model
+        style.
+          html{
+          height: 100%;
+          }a
+          body{
+          margin:0;
+          background: red;
+          height: 100%;
+          }
+          .parent{
+          height: 100%;
+          width:100%;
+          background-color: blue;
+          padding: 30px;
+          box-sizing: border-box;
+          display: flex;
+          justify-content:space-between;
+          align-items:stretch;
+          }
+          .child{
+          width:100px;
+          background-color: pink;
+          border:2px solid red;
+          height:100px;
+          }
+          #one{
+          align-self:flex-start;
+          }
+          #two{
+          align-self:center;
+          }
+          #three{
+          align-self: flex-end;
+          }
+        .parent
+          #one.child
+          #two.child
+          #three.child
+        a.navigation__link(href='#')
+          i.fa.fa-heart-o
+        a.navigation__link(href='profile.html')
+          i.fa.fa-user-o
+    main.edit-profile
+      section.profile-form
+        header.profile-form__header
+          .profile-form__avatar-container
+            img.profile-form__avatar(src='images/avatar.jpg')
+          h4.profile-form__title serranoarevalo
+        form.edit-profile__form(action='#')
+          .edit-profile__form-row
+            label.edit-profile__label(for='name')
+              | Name
+            input#name.edit-profile__input(type='text', value='Nicolás Serrano Arévalo')
+          .edit-profile__form-row
+            label.edit-profile__label(for='username')
+              | Username
+            input#username.edit-profile__input(type='text')
+          .edit-profile__form-row
+            label.edit-profile__label(for='website')
+              | Website
+            input#website.edit-profile__input(type='url')
+          .edit-profile__form-row
+            label.edit-profile__label(for='bio')
+              | Bio
+            textarea#bio.edit-profile__textarea
+          .edit-profile__form-row
+            label.edit-profile__label(for='email')
+              | Email
+            input#email.edit-profile__input(type='email')
+          .edit-profile__form-row
+            label.edit-profile__label(for='phone-number')
+              | Phone Number
+            input#phone-number.edit-profile__input(type='text')
+          .edit-profile__form-row
+            label.edit-profile__label(for='gender') Gender
+            select#gender
+              option(value='male') Male
+              option(value='female') Female
+              option(value='whatever') Whatever
+          .edit-profile__form-row
+            span.edit-profile__label Similar Account Suggestions
+            input#similar(type='checkbox', checked='')
+            label(for='similar')
+              | Include your account when recommending similar accounts people might want to follow. 
+              a(href='#') [?]
+          .edit-profile__form-row
+            label.edit-profile__label
+            input(type='submit', value='Submit')
+    footer.footer
+      nav.footer__nav
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='#') about us
+          li.footer__list-item
+            a.footer__link(href='#') support
+          li.footer__list-item
+            a.footer__link(href='#') blog
+          li.footer__list-item
+            a.footer__link(href='#') press
+          li.footer__list-item
+            a.footer__link(href='#') api
+          li.footer__list-item
+            a.footer__link(href='#') jobs
+          li.footer__list-item
+            a.footer__link(href='#') privacy
+          li.footer__list-item
+            a.footer__link(href='#') terms
+          li.footer__list-item
+            a.footer__link(href='#') directory
+          li.footer__list-item
+            a.footer__link(href='#') language
+      span.footer__copyright © 2017 instagram
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='js/app.js')
